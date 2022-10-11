@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+# CRUD APP
+[
+	{
+	_id: 1,
+	name: "Khurram"
+	email: "khurram@nayyartech.com"
+	gender: "male"
+	}
+]
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Final output: You need to develop a CRUD app of users. CRUD app mean where we can create, read/list, update and delete any data.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Requirements:
+1. This is purely JS based and React, no API need. Just array & object operations.
+2. Create a component / view where you are showing list of user in tabular format along with update and delete button in last column.
+3. There must be a button before start of table. on click of that button a popup will appear where user can add name, email and gender (from dropdown)
+4. on click on add user button in popup create a user object and store it in array and hide component on success.
+5. render this list (array of user object) in tabular format (Step 2 of this requirement)
+6. _id should auto generate/increment based on array size. and email should be unique for each user.
+7. if email already in used by other user show a gentle message in creation/update popup.
+8. upon click on update button in table record. pass selected user data to update popup where user can change and save data same like creation.
+9. upon click on delete button in table. show a confirm dialog and on confirmation remove that item/user from array of users.
+10. user schema is mentioned on top of this assignment.
+11. A sample application (Product CRUD) is running here https://spiralyze-crud.herokuapp.com this sample app storing data in db but in your case no need to persist data.
