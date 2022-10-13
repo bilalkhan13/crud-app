@@ -1,8 +1,15 @@
 import React from 'react';
-import { UserForm } from '../form/UserForm';
 import './popup.css';
-
-export default function Popup({ visible, setVisible, id, operation }) {
+import { UserForm } from '../form/UserForm';
+import Utility from '../../components/lib/utility';
+import { userData } from '../../data/userData';
+export default function Popup({
+  visible,
+  setVisible,
+  id,
+  operation,
+  arrIndex,
+}) {
   return (
     <>
       {visible ? (
@@ -14,14 +21,12 @@ export default function Popup({ visible, setVisible, id, operation }) {
                 X
               </span>
             </div>
-            <div className="popup__content"><UserForm /></div>
-            <div className="popup__footer">
-              <button type="button" className="btn btn-success" id='save__user'>
-                Save
-              </button>
-              <button type="button" className="btn btn-warning" onClick={() => setVisible(false)}>
-                Close
-              </button>
+            <div className="popup__content">
+              <UserForm
+                operation={operation}
+                index={arrIndex}
+                setVisible={setVisible}
+              />
             </div>
           </div>
         </div>

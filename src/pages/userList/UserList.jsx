@@ -6,6 +6,7 @@ import { userData } from '../../data/userData';
 export const UserList = () => {
   const [visible, setVisible] = useState(false);
   const [btnState, setBtnState] = useState('Add New');
+  const [arrIndex, setArrIndex] = useState(userData.length);
 
   function handleClick(stateValue) {
     setVisible((prev) => !prev);
@@ -14,7 +15,6 @@ export const UserList = () => {
   return (
     <>
       <div className="userList__Container">
-        <Popup visible={visible} setVisible={setVisible} operation={btnState} />
         <h2>User List</h2>
         <div className="user__data">
           <button
@@ -22,6 +22,7 @@ export const UserList = () => {
             className="btn btn-primary User__add"
             onClick={() => {
               handleClick('Add New');
+              setArrIndex(userData.length-1);
             }}
           >
             Add New User
@@ -37,11 +38,17 @@ export const UserList = () => {
               </tr>
             </thead>
             <tbody id="user__list">
-              {userData.map(({ userid, email, name, gender }) => {
+              {userData.map(({ uid, email, name, gender }, index) => {
                 return (
                   <>
+                    <Popup
+                      visible={visible}
+                      setVisible={setVisible}
+                      operation={btnState}
+                      arrIndex={arrIndex}
+                    />
                     <tr className="user__list-row">
-                      <td>{userid}</td>
+                      <td>{uid}</td>
                       <td>{name}</td>
                       <td>{email}</td>
                       <td>{gender}</td>
@@ -51,6 +58,7 @@ export const UserList = () => {
                           className="btn btn-success"
                           onClick={() => {
                             handleClick('Update');
+                            setArrIndex(index);
                           }}
                         >
                           Update
@@ -60,6 +68,7 @@ export const UserList = () => {
                           className="btn btn-warning"
                           onClick={() => {
                             handleClick('Delete');
+                            setArrIndex(index);
                           }}
                         >
                           Delete

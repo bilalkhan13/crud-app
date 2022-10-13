@@ -66,3 +66,19 @@
 .popup__content {
   padding: 0.5rem;
 }
+
+.user__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.user__form input, .user__form select{
+  width: 100%;
+  border: 1px solid #000;
+  letter-spacing: 0.1rem;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  font-size: 1.5rem;
+}
+.user__form input::placeholder{
+  color: grey;}
