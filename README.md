@@ -50,7 +50,7 @@ Compnents/lib/Utility.js is form global functions. <br />
 7- Popup title, action buttons, and crud operation is based on passed props when we click on the main page button. <br />
 8- We have CSS files in every component folder for styling. <br />
 
-## Some point need to be noted:
+## Some points need to be noted:
 1- Fields validations are implemented. <br />
 2- Id is auto generated based on last assigned user id insted of array size. <br />
 3- Crud operations is performing in "crudOperation" function based on props which is trigger from actions button. <br />
