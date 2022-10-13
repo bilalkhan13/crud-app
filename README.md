@@ -1,4 +1,5 @@
 # CRUD APP Requirments
+```
 [
 	{
 	_id: 1,
@@ -7,6 +8,7 @@
 	gender: "Male"
 	}
 ]
+```
 
 Final output: You need to develop a CRUD app of users. CRUD app mean where we can create, read/list, update and delete any data.
 
@@ -30,7 +32,7 @@ Level 3 : Components/popup/Popup.jsx <br />
 Level 4 : Compnents/userForm/UserForm.jsx <br />
 Compnents/lib/Utility.js is form global functions. <br />
 
-# Technical Function Document of this assignemnt
+## Technical Function Document of this assignemnt
 1- Render FormList.jsx in App.jsx <br />
 2- FormList.jsx is render by App.jsx with all list of users & complete page view. <br />
 3- FormList have 3 button "Add New User"/"Update"/"Delete". After clicking on these buttons popup.jsx will be rendered. <br />
@@ -44,3 +46,10 @@ Compnents/lib/Utility.js is form global functions. <br />
 1- Fields validations are implemented. <br />
 2- Id is auto generated based on last assigned user id insted of array size. <br />
 3- Crud operations is performing in "crudOperation" function based on props which is trigger from actions button. <br />
+
+## App Screens
+![Front Page](./src/assets/appScreens/appMain.png)
+![Add New User](./src/assets/appScreens/appAddNew.png)
+![Update User](./src/assets/appScreens/appUpdate.png)
+![Delete User](./src/assets/appScreens/appDelete.png)
+![Form Validation](./src/assets/appScreens/appValidation.png)
