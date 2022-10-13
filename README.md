@@ -35,10 +35,10 @@ Compnents/lib/Utility.js is form global functions. <br />
 - App
  - src
 	- pages
-	 - page based components
+	  - page based components
   - components
-	 - component folders
-	  - component with css files
+	 - components folders
+	   - components with css files
 
 ## Technical Function Document of this assignemnt
 1- Render FormList.jsx in App.jsx <br />
