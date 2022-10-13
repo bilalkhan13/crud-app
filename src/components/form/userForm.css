@@ -3,7 +3,8 @@
   flex-direction: column;
 }
 
-.user__form input, .user__form select{
+.user__form input,
+.user__form select {
   width: 100%;
   border: 1px solid #000;
   letter-spacing: 0.1rem;
@@ -11,5 +12,6 @@
   padding: 0.2rem;
   font-size: 1.5rem;
 }
-.user__form input::placeholder{
-  color: grey;}
+.user__form input::placeholder {
+  color: grey;
+}

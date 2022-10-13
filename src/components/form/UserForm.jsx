@@ -4,14 +4,23 @@ import { userData } from '../../data/userData';
 import Utility from '../../components/lib/utility';
 
 export const UserForm = ({ operation, index, setVisible }) => {
-  const [userId, setUserId] = useState(userData[index].uid);
-  const [userName, setUserName] = useState(userData[index].name);
-  const [userEmail, setUserEmail] = useState(userData[index].email);
-  const [userGender, setUserGender] = useState(userData[index].gender);
-  const [assignId, setAssignId] = useState(userId + 1);
+  const [userName, setUserName] = useState(
+    operation !== 'Add New' ? userData[index].name : ''
+  );
+  const [userEmail, setUserEmail] = useState(
+    operation !== 'Add New' ? userData[index].email : ''
+  );
+  const [userGender, setUserGender] = useState(
+    operation !== 'Add New' ? userData[index].gender : 'Male'
+  );
+  const userId = userData[index].uid;
+  const assignId = userId + 1;
 
   return (
     <>
+      {/******************************************
+       * Delete Form & Update Form
+       *******************************************/}
       {operation === 'Delete' ? (
         <form className="user__form" id="user-form">
           Are You Sure To Delete This Data
@@ -38,6 +47,7 @@ export const UserForm = ({ operation, index, setVisible }) => {
           <input
             value={userEmail}
             type="email"
+            name="email"
             id="user-email"
             placeholder="User Email"
             onChange={(e) => setUserEmail(e.target.value)}
@@ -72,12 +82,14 @@ export const UserForm = ({ operation, index, setVisible }) => {
           />
           <input
             type="email"
+            pattern="[^ @]*@[^ @]*"
             id="user-email"
             placeholder="User Email"
             onChange={(e) => setUserEmail(e.target.value)}
             required
           />
           <select
+            value={userGender}
             name="gender"
             id="user-gender"
             onChange={(e) => setUserGender(e.target.value)}

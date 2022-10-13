@@ -1,34 +1,41 @@
 import { userData } from '../../data/userData';
 
 export default class Utility {
-  // static getData(url= '') {
-  //   return fetch(url).then((res) => res.json());
-  // }
-
+  /******************************************
+   * CRUD Operations
+   *******************************************/
   static crudOperation(operation, arrIndex, setVisible, updateData) {
-    console.log('test'+arrIndex)
+    console.log('test' + arrIndex);
     if (operation === 'Delete') {
-      Utility.deleteItem(arrIndex);
+      userData.splice(arrIndex, 1);
       setVisible(false);
     } else if (operation === 'Update') {
-      Utility.updateItem(updateData, arrIndex);
+      userData.splice(arrIndex, 1, updateData);
       setVisible(false);
     } else {
-      Utility.addItem(updateData);
+      const indexOf = userData.findIndex(function (item) {
+        console.log('forEach:   ' + updateData.email + ':' + item.email);
+        return item.email === updateData.email;
+      });
+      const validEmail =
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      if (
+        indexOf >= 0 ||
+        updateData.email === '' ||
+        !updateData.email.match(validEmail) ||
+        updateData.name === ''
+      ) {
+        return alert(
+          'Email already exist or any input field is empty or email input field is not vaild.'
+        );
+      } else if (indexOf < 0) {
+        console.log('Add Data:   ' + indexOf);
+        userData.push(updateData);
+      }
       setVisible(false);
     }
   }
-
-  static deleteItem(index) {
-    userData.splice(index, 1);
-  }
-
-  static addItem(updateData) {
-    userData.push(updateData);
-
-  }
-
-  static updateItem(updateData, arrIndex) {
-    userData.splice(arrIndex, 1, updateData);
-  }
+  /******************************************
+   * End ---------CRUD Operations
+   *******************************************/
 }

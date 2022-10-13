@@ -14,19 +14,22 @@ export const UserList = () => {
   }
   return (
     <>
-      <div className="userList__Container">
+      <div className="userList__Container" key={arrIndex}>
         <h2>User List</h2>
-        <div className="user__data">
+        <div className="user__data" key={arrIndex + 1}>
           <button
             type="button"
             className="btn btn-primary User__add"
             onClick={() => {
               handleClick('Add New');
-              setArrIndex(userData.length-1);
+              setArrIndex(userData.length - 1);
             }}
           >
             Add New User
           </button>
+          {/******************************************
+           * Data Grid
+           *******************************************/}
           <table className="user__data-table">
             <thead>
               <tr className="user__table-header">
