@@ -32,6 +32,14 @@ Level 3 : Components/popup/Popup.jsx <br />
 Level 4 : Compnents/userForm/UserForm.jsx <br />
 Compnents/lib/Utility.js is form global functions. <br />
 
+- App
+ - src
+	- pages
+	 - page based components
+  - components
+	 - component folders
+	  - component with css files
+
 ## Technical Function Document of this assignemnt
 1- Render FormList.jsx in App.jsx <br />
 2- FormList.jsx is render by App.jsx with all list of users & complete page view. <br />
@@ -48,8 +56,23 @@ Compnents/lib/Utility.js is form global functions. <br />
 3- Crud operations is performing in "crudOperation" function based on props which is trigger from actions button. <br />
 
 ## App Screens
+
+__Front Page__
+
 ![Front Page](./src/assets/appScreens/appMain.png)
+
+__Add User (Clicked on "Add New User" button)__
+
 ![Add New User](./src/assets/appScreens/appAddNew.png)
+
+__Add User (Clicked on "Update User" button)__
+
 ![Update User](./src/assets/appScreens/appUpdate.png)
+
+__Delete User (Clicked on "Delete User" button)__
+
 ![Delete User](./src/assets/appScreens/appDelete.png)
+
+__Form Validation__
+
 ![Form Validation](./src/assets/appScreens/appValidation.png)
